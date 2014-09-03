@@ -14,3 +14,6 @@ syncdb:
 
 migrate:
 	PYTHONPATH=`pwd` DJANGO_SETTINGS_MODULE=kiwi.settings $(MANAGE) migrate qa
+
+test:
+	PYTHONPATH=`pwd` DJANGO_SETTINGS_MODULE=kiwi.settings $(MANAGE) test qa

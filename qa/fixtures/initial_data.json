@@ -1,0 +1,244 @@
+[
+{
+    "pk": 1, 
+    "model": "auth.user", 
+    "fields": {
+        "username": "admin", 
+        "first_name": "", 
+        "last_name": "", 
+        "is_active": true, 
+        "is_superuser": true, 
+        "is_staff": true, 
+        "last_login": "2014-09-03T06:11:43.914Z", 
+        "groups": [], 
+        "user_permissions": [], 
+        "password": "pbkdf2_sha256$12000$1d92MnYgFNF6$PGWi8Tg+wrjgGbmzrWshyi/7PpobFkKNSgnvHIiEt3I=", 
+        "email": "gorazio.the.greek@gmail.com", 
+        "date_joined": "2014-09-02T13:04:02.490Z"
+    }
+},
+{
+    "pk": 2, 
+    "model": "auth.user", 
+    "fields": {
+        "username": "annima", 
+        "first_name": "Andrew", 
+        "last_name": "Annima", 
+        "is_active": true, 
+        "is_superuser": true, 
+        "is_staff": false, 
+        "last_login": "2014-09-02T16:28:47Z", 
+        "groups": [], 
+        "user_permissions": [], 
+        "password": "pbkdf2_sha256$12000$rNJ7JnH4pzal$+DsnaoRjfVbz3hNjpE1ypmjWxUgy7Y5H0CGIOEFE4dY=", 
+        "email": "annima.sola@gmail.com", 
+        "date_joined": "2014-09-02T16:28:47Z"
+    }
+},
+{
+    "pk": 1, 
+    "model": "qa.question", 
+    "fields": {
+        "text": "I wonder if anybody know who's John Halt?", 
+        "title": "Who's John Halt?", 
+        "timestamp": "2014-09-02T13:48:46.817Z", 
+        "author": 1
+    }
+},
+{
+    "pk": 2, 
+    "model": "qa.question", 
+    "fields": {
+        "text": "Hello SmackOverflow! I'm newbie here, so please let me start with stupid question - Who's John Halt??", 
+        "title": "Any news about Elis?", 
+        "timestamp": "2014-09-02T13:51:06.544Z", 
+        "author": 1
+    }
+},
+{
+    "pk": 3, 
+    "model": "qa.question", 
+    "fields": {
+        "text": "    In the throws of young love Leroy Didn't think to think and in the blink of an eye, tied the knot not knowing how to not know.He was the prodigal son this girl had brought him home. He moved out of his step dad's apartment. He moved in with this cute Guatemalan, things were copacetic 'til she caught him?", 
+        "title": "Need help ASAP!", 
+        "timestamp": "2014-09-02T16:32:50.717Z", 
+        "author": 2
+    }
+},
+{
+    "pk": 4, 
+    "model": "qa.question", 
+    "fields": {
+        "text": "    Can't get this shit off my mind. I just want to be alright, so just tell me nothings wrong. Then get undressed and spend the night. \r\nCan't get this shit off my mind I just want to be alright So just tell me nothings wrong?", 
+        "title": "I feel so alone, need to talk someone...", 
+        "timestamp": "2014-09-02T16:36:16.355Z", 
+        "author": 2
+    }
+},
+{
+    "pk": 5, 
+    "model": "qa.question", 
+    "fields": {
+        "text": "I've been reading on the django docs about the comments framework and how to customize it (http://docs.djangoproject.com/en/1.1/ref/contrib/comments/custom/) In that page, it shows how to add new fields to a form. But what I want to do is to remove unnecesary fields, like URL, email (amongst other minor mods.)\r\n\r\nOn that same doc page it says the way to go is to extend my custom comments class from BaseCommentAbstractModel, but that's pretty much it, I've come so far and now I'm at a loss. I couldn't find anything on this specific aspect.\r\n", 
+        "title": "How to extend the comments framework (django) by removing unnecesary fields", 
+        "timestamp": "2014-09-03T08:12:33.199Z", 
+        "author": 2
+    }
+},
+{
+    "pk": 6, 
+    "model": "qa.question", 
+    "fields": {
+        "text": "I'm building an API using Tastypie with Django and I've run into a bit of an issue.\r\n\r\nI have a model called a Moment (basically a blog post, with a title and body text), and I want to be able to attach comments to it and retrieve them via the API. I'm using django.contrib.comments with Django 1.6.5 and Tastypie 0.11.1.\r\n\r\nNow, according to the Tastypie documentation, this should be straightforward. What I've implemented is pretty close to that. This is my models.py", 
+        "title": "Accessing comments on an object via reverse relationship with Tastypie", 
+        "timestamp": "2014-09-03T08:13:23.447Z", 
+        "author": 1
+    }
+},
+{
+    "pk": 7, 
+    "model": "qa.question", 
+    "fields": {
+        "text": "What I want is to extract every lines starting by 4 and 8 (from file 2) and they are lots. So usually if only one line would match I would use a python dictionary, one key one element easy! But now that I have multiple element matching to the same key, my script would only extract the last one (obviously as it goes along it will erase previous ones!). So I get this is not how it works but I have no idea and I would be very happy if someone can help me start.", 
+        "title": "Extract: Python dictionary, key with multiple values", 
+        "timestamp": "2014-09-03T08:14:12.573Z", 
+        "author": 2
+    }
+},
+{
+    "pk": 8, 
+    "model": "qa.question", 
+    "fields": {
+        "text": "I am trying to send and receive C structure data from a python client to server and vice-versa. Both clients and server work smoothly in connecting and exchanging data. Client sends a ctype structure to server and server sends it back again. The problem is that I don't know how to interpret the message received in the client and extract the data as it is in the structure format. My final Idea is to have a python server and C-client talking to each other and exchanging data in a predefined structure.", 
+        "title": "Send/receive data through socket using python and ctype Structure", 
+        "timestamp": "2014-09-03T08:14:37.279Z", 
+        "author": 2
+    }
+},
+{
+    "pk": 1, 
+    "model": "django_comments.comment", 
+    "fields": {
+        "comment": "You should not need to get the namespace in order to get the config.\r\nAny setting that your addon requires should be added on to ENV.APP in config/environment.js. You should not need to get the namespace in order to get the config.You should not need to get the namespace in order to get the config. Any setting that your addon requires should be added on to ENV.APP in config/environment.js.\r\nAny setting that your addon requires should be added on to ENV.APP in config/environment.js.", 
+        "user_url": "https://kavahq.com/api/barista/post_deploy/", 
+        "submit_date": "2014-09-02T19:02:52Z", 
+        "ip_address": "127.0.0.1", 
+        "object_pk": "1", 
+        "site": 1, 
+        "is_removed": false, 
+        "user": 1, 
+        "content_type": 9, 
+        "is_public": true, 
+        "user_name": "Sebastian", 
+        "user_email": "andrew.rovno@gmail.com"
+    }
+},
+{
+    "pk": 2, 
+    "model": "django_comments.comment", 
+    "fields": {
+        "comment": "Sunset strip bitch\r\nSunset strip bitch\r\nSunset strip bitch\r\nYea-yea-yea-yea-yea-yeah!\r\nHe reads women's magazines, swears the truth doesn't phase him and\r\nHe knows the hottest bras for fall and how to make her fall in love\r\nIn four or five days or less, guess it depends on the stars\r\nAnd how well he has memorized his dating do's and don'ts he says\r\n\r\nI'm ready to go\r\nGonna see my name underneath the stars when I walk the Boulevard\r\nGonna see my name underneath the stars when I walk the Boulevard\r\nThe horoscope today said things would go my way\r\nThe sunset strip bitch\r\nThe sunset strip bitch\r\nThe sunset strip bitch\r\nYea-yea-yea-yea-yea-yeah!", 
+        "user_url": "http://www.pravda.com.ua/news/2014/03/25/7020184/", 
+        "submit_date": "2014-09-02T19:06:17Z", 
+        "ip_address": "127.0.0.1", 
+        "object_pk": "1", 
+        "site": 1, 
+        "is_removed": false, 
+        "user": 1, 
+        "content_type": 9, 
+        "is_public": true, 
+        "user_name": "Andy", 
+        "user_email": "Markos.Symeonides@axiossystems.com"
+    }
+},
+{
+    "pk": 3, 
+    "model": "django_comments.comment", 
+    "fields": {
+        "comment": "asdasdf", 
+        "user_url": "", 
+        "submit_date": "2014-09-02T19:07:49.679Z", 
+        "ip_address": "127.0.0.1", 
+        "object_pk": "3", 
+        "site": 1, 
+        "is_removed": false, 
+        "user": 1, 
+        "content_type": 9, 
+        "is_public": true, 
+        "user_name": "admin", 
+        "user_email": "gorazio.the.greek@gmail.com"
+    }
+},
+{
+    "pk": 4, 
+    "model": "django_comments.comment", 
+    "fields": {
+        "comment": "You should not need to get the namespace in order to get the config.You should not need to get the namespace in order to get the config. Any setting that your addon requires should be added on to ENV.APP in config/environment.js\r\nHe knows the hottest bras for fall and how to make her fall in love In four or five days or less, guess it depends on the stars And how well he has memorized his dating do's and don'ts he says I'm ready to go Gonna see my name underneath the stars when I walk the Boulevard", 
+        "user_url": "", 
+        "submit_date": "2014-09-02T20:32:28.889Z", 
+        "ip_address": "127.0.0.1", 
+        "object_pk": "1", 
+        "site": 1, 
+        "is_removed": false, 
+        "user": 1, 
+        "content_type": 9, 
+        "is_public": true, 
+        "user_name": "admin", 
+        "user_email": "gorazio.the.greek@gmail.com"
+    }
+},
+{
+    "pk": 5, 
+    "model": "django_comments.comment", 
+    "fields": {
+        "comment": "Blah, blah\r\nYou should not need to get the namespace in order to get the config.\r\nAny setting that your addon requires should be added on to ENV.APP in config/environment.js. You should not need to get the namespace in order to get the config.You should not need to get the namespace in order to get the config. Any setting that your addon requires should be added on to ENV.APP in config/environment.js. Any setting that your addon requires should be added on to ENV.APP in config/environment.js.", 
+        "user_url": "", 
+        "submit_date": "2014-09-02T20:46:07.338Z", 
+        "ip_address": "127.0.0.1", 
+        "object_pk": "1", 
+        "site": 1, 
+        "is_removed": false, 
+        "user": 1, 
+        "content_type": 9, 
+        "is_public": true, 
+        "user_name": "admin", 
+        "user_email": "gorazio.the.greek@gmail.com"
+    }
+},
+{
+    "pk": 6, 
+    "model": "django_comments.comment", 
+    "fields": {
+        "comment": "Blah", 
+        "user_url": "", 
+        "submit_date": "2014-09-03T05:45:55.689Z", 
+        "ip_address": "127.0.0.1", 
+        "object_pk": "1", 
+        "site": 1, 
+        "is_removed": false, 
+        "user": 1, 
+        "content_type": 9, 
+        "is_public": true, 
+        "user_name": "admin", 
+        "user_email": "gorazio.the.greek@gmail.com"
+    }
+},
+{
+    "pk": 7, 
+    "model": "django_comments.comment", 
+    "fields": {
+        "comment": "Blah-Blah!", 
+        "user_url": "", 
+        "submit_date": "2014-09-03T07:17:21.005Z", 
+        "ip_address": "127.0.0.1", 
+        "object_pk": "4", 
+        "site": 1, 
+        "is_removed": false, 
+        "user": 1, 
+        "content_type": 9, 
+        "is_public": true, 
+        "user_name": "admin", 
+        "user_email": "gorazio.the.greek@gmail.com"
+    }
+}
+]
