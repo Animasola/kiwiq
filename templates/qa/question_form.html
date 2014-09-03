@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Smack Overflow:Ask Question{% endblock %}
+
+{% block body %}
+<div class="row panel callout">
+    <h3>Compose and Post your question here:</h3>
+  <form method="post" action="{% url 'create_question' %}">
+    {% csrf_token %}
+
+    {{ form.title.label_tag }}
+    <label class="error">{{ form.title }}</label>
+    {% for error in form.title.errors %}
+      <small class="error">{{ error }}</small>
+    {% endfor %}
+
+    {{ form.text.label_tag }}
+    <label class="error">{{ form.text }}</label>
+    {% for error in form.text.errors %}
+      <small class="error">{{ error }}</small>
+    {% endfor %}
+
+    <input class="button right success" type="submit" name="post" value="Post New Question" />
+
+  </form>
+
+</div>
+{% endblock %}

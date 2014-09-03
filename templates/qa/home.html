@@ -6,6 +6,7 @@
 {% block body %}
 
   <h3>Asked Questions:</h3>
+  <a class="button success" href="{% url 'create_question' %}">I Got a Question</a>
 {% for question in questions %}
   <div class="row panel callout">
     <div class="large-1 columns ">

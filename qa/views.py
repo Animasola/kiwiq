@@ -1,5 +1,9 @@
+#-*- coding:utf-8 -*-
 from django.views.generic import ListView, DetailView
+from django.views.generic.edit import CreateView
 from django.core.urlresolvers import reverse
+
+from datetime import datetime
 
 from .models import Question
 
@@ -31,3 +35,18 @@ class QuestionPage(DetailView):
         context['next'] = reverse('question-detailed', args=[self.question.id])
 
         return context
+
+
+class CreateQuestion(CreateView):
+
+    model = Question
+    fields = ['title', 'text']
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        form.instance.timestamp = datetime.now()
+
+        return super(CreateQuestion, self).form_valid(form)
+
+    def get_success_url(self):
+            return reverse('home')
