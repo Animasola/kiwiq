@@ -19,15 +19,16 @@
   <div class="row panel callout">
     <div class="large-1 columns ">
     {% get_comment_count for question as comment_count %}
-      <span class="label warning">A:{{ comment_count }}</span>
+      <br/><a class="button large" href="{% url 'question-detailed' question.pk %}">{{ comment_count }}</a>
     </div>
     <div class="large-11 columns">
-      <span class="success label">Q:</span> <a href="{% url 'question-detailed' question.pk %}">{{ question.title }}</a> <small class="right">{{ question.timestamp }}</small>
+      <span class="label warning"><b>Q:</b></span> <a href="{% url 'question-detailed' question.pk %}"><b>{{ question.title }}</b></a><small class="label warning right">{{ question.author }}, {{ question.timestamp }}</small>
       <div class="panel">
         <p>{{ question.text }} <a href="#">...</a></p>
       </div>
     </div>
   </div>
+
 {% endfor %}
 {% endblock %}
 {% block pagination %}

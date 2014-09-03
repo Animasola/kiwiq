@@ -4,7 +4,7 @@ from django.core.urlresolvers import reverse
 from .models import Question
 
 
-QUESTIONS_PER_PAGE = 3
+QUESTIONS_PER_PAGE = 5
 
 
 class HomePage(ListView):
