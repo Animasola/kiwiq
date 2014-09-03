@@ -18,5 +18,5 @@
         <input class="button tiny warning" type="submit" name="post" class="submit-post" value="Post" />
     </form>
 {% else %}
-    I'm sorry, but you must be <a href="javascript:alert('send to login page')">logged in</a> to submit comments.
+    I'm sorry, but you must be <a href="{% url 'login' %}">logged in</a> to submit comments.
 {% endif %}

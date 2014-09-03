@@ -4,11 +4,15 @@ from django.core.urlresolvers import reverse
 from .models import Question
 
 
+QUESTIONS_PER_PAGE = 3
+
+
 class HomePage(ListView):
 
     model = Question
     template_name = "qa/home.html"
     context_object_name = 'questions'
+    paginate_by = QUESTIONS_PER_PAGE
 
 
 class QuestionPage(DetailView):

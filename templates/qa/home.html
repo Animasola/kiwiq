@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load comments %}
 
 {% block title %}Smack Overflow:Home{% endblock %}
 
@@ -16,20 +17,31 @@
   <h3>Asked Questions:</h3>
 {% for question in questions %}
   <div class="row panel callout">
-  <div class="large-1 columns ">
-    <span class="label warning">A:12</span>
-  </div>
-  <div class="large-11 columns">
-    <span class="success label">Q:</span> <a href="{% url 'question-detailed' question.pk %}">{{ question.title }}</a> <small class="right">{{ question.timestamp }}</small>
-    <div class="panel">
-      <p>{{ question.text }} <a href="#">...</a></p>
+    <div class="large-1 columns ">
+    {% get_comment_count for question as comment_count %}
+      <span class="label warning">A:{{ comment_count }}</span>
     </div>
-    <a class="button tiny right" href="#">Answer</a>
-  </div>
+    <div class="large-11 columns">
+      <span class="success label">Q:</span> <a href="{% url 'question-detailed' question.pk %}">{{ question.title }}</a> <small class="right">{{ question.timestamp }}</small>
+      <div class="panel">
+        <p>{{ question.text }} <a href="#">...</a></p>
+      </div>
+    </div>
   </div>
 {% endfor %}
-
 {% endblock %}
-{% block panel %}
-  <li><a href="#">Requests</a></li>
+{% block pagination %}
+  {% if is_paginated %}
+    <ul class="pagination" role="menubar" aria-label="Pagination">
+      {% if page_obj.has_previous %}
+         <li class="arrow" aria-disabled="false"><a href="{% url 'home' %}?page={{ page_obj.previous_page_number }}">&laquo; Previous</a></li>
+      {% endif %}
+      <li class="current"><a href="">{{ page_obj.number }}</a></li>
+      <li class="unavailable" aria-disabled="true"><a href="">of</a></li>
+      <li class="unavailable" aria-disabled="true"><a href="">{{ page_obj.paginator.num_pages }}</a></li>
+      {% if page_obj.has_next %}
+        <li class="arrow"><a href="{% url 'home' %}?page={{ page_obj.next_page_number }}">Next &raquo;</a></li>
+      {% endif %}
+    </ul>
+{% endif %}
 {% endblock %}
