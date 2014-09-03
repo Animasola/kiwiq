@@ -60,7 +60,7 @@ class CreateQuestionViewTestCase(TestCase):
 
     def test_authorization(self):
         expected_redirect = "{0}?next={1}".format(
-            reverse('login'), reverse('create_question'))
+            reverse('auth_login'), reverse('create_question'))
         response = self.client.get(reverse('create_question'))
         self.assertRedirects(
             response,

@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from django_comments.signals import comment_was_posted
 
 from .utils import notify
+from .exceptions import EmailNotificationException
 
 
 class Question(models.Model):
@@ -30,7 +31,7 @@ def notify_author(sender, comment, request, **kwargs):
     try:
         notify(question, comment, request)
     except Exception as e:
-        raise Exception("Failed to notify author:\n%s" % str(e))
+        raise EmailNotificationException("Failed to notify author:\n%s" % str(e))
 
 
 comment_was_posted.connect(notify_author, dispatch_uid='notify_author')
