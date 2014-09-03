@@ -10,3 +10,10 @@ class Question(models.Model):
 
     def __unicode__(self):
         return "%s: %s" % (self.author.username, self.title)
+
+    def get_minified_text(self, max_length=100):
+        if len(self.text) <= max_length:
+            result = self.text
+        else:
+            result = self.text[:max_length] + u'...'
+        return result

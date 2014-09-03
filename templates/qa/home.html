@@ -4,27 +4,23 @@
 {% block title %}Smack Overflow:Home{% endblock %}
 
 {% block body %}
-<!-- <ul class="breadcrumbs">
-  {% if user.is_authenticated %}
-    <li><a href="#">Edit</a></li>
-    <li><a href="#">(admin)</a></li>
-    <li><a href="#">Logout</a></li>
-  {% else %}
-    <li><a href="{% url "login" %}">Login</a></li>
-  {% endif %}
-</ul> -->
 
   <h3>Asked Questions:</h3>
 {% for question in questions %}
   <div class="row panel callout">
     <div class="large-1 columns ">
     {% get_comment_count for question as comment_count %}
-      <br/><a class="button large" href="{% url 'question-detailed' question.pk %}">{{ comment_count }}</a>
+      <br/>
+      {% if comment_count > 0 %}
+      <a class="button large" href="{% url 'question-detailed' question.pk %}">{{ comment_count }}</a>
+      {% else %}
+      <span class="button disabled large">{{ comment_count }}</span>
+      {% endif %}
     </div>
     <div class="large-11 columns">
       <span class="label warning"><b>Q:</b></span> <a href="{% url 'question-detailed' question.pk %}"><b>{{ question.title }}</b></a><small class="label warning right">{{ question.author }}, {{ question.timestamp }}</small>
       <div class="panel">
-        <p>{{ question.text }} <a href="#">...</a></p>
+        <p>{{ question.get_minified_text }}</p>
       </div>
     </div>
   </div>

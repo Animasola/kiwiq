@@ -2,8 +2,8 @@
 from django.test import TestCase
 from django.core.urlresolvers import reverse
 
-from .models import Question
-from .views import QUESTIONS_PER_PAGE
+from qa.models import Question
+from qa.views import QUESTIONS_PER_PAGE
 
 
 class QuestionListViewTestCase(TestCase):
