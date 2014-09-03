@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Smack Overflow:Home{% endblock %}
+
+{% block body %}
+<!-- <ul class="breadcrumbs">
+  {% if user.is_authenticated %}
+    <li><a href="#">Edit</a></li>
+    <li><a href="#">(admin)</a></li>
+    <li><a href="#">Logout</a></li>
+  {% else %}
+    <li><a href="{% url "login" %}">Login</a></li>
+  {% endif %}
+</ul> -->
+
+  <h3>Asked Questions:</h3>
+{% for question in questions %}
+  <div class="row panel callout">
+  <div class="large-1 columns ">
+    <span class="label warning">A:12</span>
+  </div>
+  <div class="large-11 columns">
+    <span class="success label">Q:</span> <a href="{% url 'question-detailed' question.pk %}">{{ question.title }}</a> <small class="right">{{ question.timestamp }}</small>
+    <div class="panel">
+      <p>{{ question.text }} <a href="#">...</a></p>
+    </div>
+    <a class="button tiny right" href="#">Answer</a>
+  </div>
+  </div>
+{% endfor %}
+
+{% endblock %}
+{% block panel %}
+  <li><a href="#">Requests</a></li>
+{% endblock %}

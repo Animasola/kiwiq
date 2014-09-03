@@ -1,3 +1,12 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Question
+
+
+class QuestionAdmin(admin.ModelAdmin):
+    list_display = ['title', 'author', 'timestamp']
+    readonly_fields = ('author',)
+    search_fields = ['title', 'text']
+
+
+admin.site.register(Question, QuestionAdmin)

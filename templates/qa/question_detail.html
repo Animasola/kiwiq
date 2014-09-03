@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load comments %}
+
+{% block title %}Smack Overflow:Home{% endblock %}
+
+{% block body %}
+
+  <div class="row panel callout">
+      <div class="large-12 columns">
+        <b>{{ question.title }}</b> <small class="right">{{ question.author }}, {{ question.timestamp }}</small>
+        <p>{{ question.text }}</p>
+      </div>
+  </div>
+  {% get_comment_count for question as comment_count %}
+  <h3>{{ comment_count }} Suggested Solutions:</h3>
+  {% get_comment_list for question as comment_list %}
+  <div class="row">
+  {% for comment in comment_list %}
+    <br/>
+    <div class="large-12 columns">
+      <p class="label success"><b>{{ comment.user_name }} at {{ comment.submit_date }}:</b></p>
+      <div class="panel">
+        <p>{{ comment.comment }}</p>
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+  {% render_comment_form for question %}
+{% endblock %}

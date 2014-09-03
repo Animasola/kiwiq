@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/foundation.css" />
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+
+    {% block extra_css %}
+    {% endblock %}
+    <script src="{{ STATIC_URL }}js/vendor/modernizr.js"></script>
+
+    {% block extra_js %}
+    {% endblock %}
+  </head>
+  <body>
+    <div class="row">
+        <h1 class="text-center">Smack owerflow</h1>
+  {% block body %}
+  {% endblock %}
+    </div>
+    <ul class="breadcrumbs">
+        {% block panel %}{% endblock %}
+    </ul>
+  </body>
+</html>
