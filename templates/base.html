@@ -8,19 +8,35 @@
         {% block title %}
         {% endblock %}
     </title>
-
     {% block extra_css %}
     {% endblock %}
     <script src="{{ STATIC_URL }}js/vendor/modernizr.js"></script>
-
     {% block extra_js %}
     {% endblock %}
   </head>
   <body>
-    <div class="row">
-        <h1 class="text-center">Smack owerflow</h1>
-  {% block body %}
-  {% endblock %}
+  <nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+      <li class="name"> <h1><a href="{% url 'home' %}">Smack owerflow</a></h1> </li> <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+    <section class="top-bar-section">
+    <ul class="right">
+      {% if user.is_authenticated %}
+        <li class="active"><a href="{% url 'auth_logout' %}">Logout</a></li>
+      {% else %}
+        <li class="active"><a href="{% url 'auth_login' %}">Login</a></li>
+        <li class="active"> <a href="{% url 'registration_register' %}">Register</a></li>
+      {% endif %}
+    </ul>
+    <ul class="left show-for-large-up">
+      <li><a href="{% url 'admin:index' %}">Admin Site</a></li>
+    </ul>
+    </section>
+  </nav>
+    <br/><div class="row">
+    {% block body %}
+    {% endblock %}
     </div>
     <div class="pagination-centered">
         {% block pagination %}

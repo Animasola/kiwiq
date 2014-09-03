@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Smack Overflow:Registration{% endblock %}
+
+{% block body %}
+<div class="row panel">
+    <h4 class="small-8 small-centered columns">Fill registration form with your data</h4>
+    <form method="post" action=".">
+        {% csrf_token %}
+        <div class="large-8 columns large-centered">
+            <label class="label">{{ form.username.label }}</label>
+            <label class="error">{{ form.username }}</label>
+            {% for error in form.username.errors %}
+              <small class="error">{{ error }}</small>
+            {% endfor %}
+            <label class="label">{{ form.email.label }}</label>
+            <label class="error">{{ form.email }}</label>
+            {% for error in form.email.errors %}
+              <small class="error">{{ error }}</small>
+            {% endfor %}
+            <label class="label">{{ form.password1.label }}</label>
+            <label class="error">{{ form.password1 }}</label>
+            {% for error in form.password1.errors %}
+              <small class="error">{{ error }}</small>
+            {% endfor %}
+            <label class="label">{{ form.password2.label }}</label>
+            <label class="error">{{ form.password2 }}</label>
+            {% for error in form.password2.errors %}
+              <small class="error">{{ error }}</small>
+            {% endfor %}
+            <input class="button success right" type="submit" value="Submit" />
+        </div>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,1 @@
+Account activation at {{ site.name }} 

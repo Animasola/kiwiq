@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block head %}
+  {% block title %}Smack Overflow:Account Activated{% endblock %}
+{% endblock %}
+{% block body %}
+<div class="row panel">
+    <h2 class="small-12 small-centered columns">Congrats!</h2>
+    <div class="small-12 small-centered columns">
+        Your Account has been successfuly activated!
+        You can now <a class="label round" href="{% url "auth_login" %}">login</a> with your account.
+    </div>
+</div>
+{% endblock %}

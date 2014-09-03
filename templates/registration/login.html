@@ -3,13 +3,13 @@
 {% block head %}
   {% block title %}Login to edit information{% endblock %}
 {% endblock %}
-{% block body %}
 
+{% block body %}
   <div class="row panel">
     {% if form.errors %}
       <p class="error">Your login or password is incorrect</p>
     {% endif %}
-     <h4 class="small-8 small-centered columns">Login page</h4>
+     <h4 class="small-8 small-centered columns">Login</h4>
     <form method="post" action=".">{% csrf_token %}
       <div class="large-8 columns large-centered">
         <label class="label" for="id_username">Username:</label>
@@ -25,7 +25,8 @@
         <input type="hidden" name="next" value="{% url "home" %}" />
       {% endif %}
       <div class="small-8 columns small-centered">
-        <input class="button success" type="submit" value="login" />
+        <input class="button success" type="submit" value="login" /> or
+        <a class="button alert" href="{% url 'registration_register' %}">Sign Up</a>
       </div>
     </form>
   </div>

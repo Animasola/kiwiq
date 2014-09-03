@@ -46,6 +46,8 @@ INSTALLED_APPS = (
     'qa',
 )
 
+ACCOUNT_ACTIVATION_DAYS = 7
+
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -94,3 +96,10 @@ STATICFILES_DIRS = (
 )
 
 STATIC_URL = '/static/'
+
+# mailing
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'gorazio.the.greek@gmail.com'
+EMAIL_HOST_PASSWORD = 'Btp31uQC#'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True

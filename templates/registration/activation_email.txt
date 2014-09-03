@@ -1,0 +1,9 @@
+Welcome to {{ site }}!
+
+Hi there!, Somebody, hoping it was you, have just registred at {{ site }}.
+  
+    Folow this link 
+    http://localhost:8000{% url 'registration_activate' activation_key %}
+    to activate your account.
+
+Activation key will expire in {{ expiration_days }} days.
