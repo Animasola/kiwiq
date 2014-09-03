@@ -2,6 +2,10 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+from django_comments.signals import comment_was_posted
+
+from .utils import notify
+
 
 class Question(models.Model):
     author = models.ForeignKey(User)
@@ -18,3 +22,15 @@ class Question(models.Model):
         else:
             result = self.text[:max_length] + u'...'
         return result
+
+
+def notify_author(sender, comment, request, **kwargs):
+    question = Question.objects.get(id=comment.object_pk)
+
+    try:
+        notify(question, comment, request)
+    except Exception as e:
+        raise Exception("Failed to notify author:\n%s" % str(e))
+
+
+comment_was_posted.connect(notify_author, dispatch_uid='notify_author')
