@@ -28,7 +28,7 @@ def notify(question, comment, request=None):
     subject = "Someone answered your question"
     message_schema = 'Greetings, {0}\n{1}{2}{3}'
     msg_line_1 = '\nA user {0} have answered one of your questions\n'.format(
-        comment.user.username.capitalize())
+        comment.user.get_full_name() or comment.user.username.capitalize())
     msg_line_2 = 'Check this out at - {0}.\n'.format(url)
     msg_line_3 = 'Best Regards from Smack Overflow!'
 

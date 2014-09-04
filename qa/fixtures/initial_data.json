@@ -12,7 +12,7 @@
         "last_login": "2014-09-04T12:42:52.300Z", 
         "groups": [], 
         "user_permissions": [], 
-        "password": "pbkdf2_sha256$12000$LlfE9fNQ9UAV$UUrtD+H4xesH9vZAxcHLSVcpcxGpt0OrWFEJJDVPQ4c=", 
+        "password": "pbkdf2_sha256$12000$xAVfsL9VHNW8$p3yNfQjSwIEtzJt6OrZiD3q/MgDY5H9x5xsGo/FdV+0=", 
         "email": "annima.sola@gmail.com", 
         "date_joined": "2014-09-04T08:14:37.964Z"
     }
@@ -45,12 +45,38 @@
         "is_active": true, 
         "is_superuser": true, 
         "is_staff": true, 
-        "last_login": "2014-09-04T12:43:10Z", 
+        "last_login": "2014-09-04T13:18:17.617Z", 
         "groups": [], 
         "user_permissions": [], 
         "password": "pbkdf2_sha256$12000$8Ra4MCdN3Ssg$VrzOajpTqHfWMgLbFJE/QCuirMiSeLN866Z6ikdSfCI=", 
         "email": "annima.sola@gmail.com", 
         "date_joined": "2014-09-04T12:43:10Z"
+    }
+},
+{
+    "pk": 4, 
+    "model": "auth.user", 
+    "fields": {
+        "username": "AndreyGorik0080a15ac449478d", 
+        "first_name": "Andrey", 
+        "last_name": "Gorik", 
+        "is_active": true, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-09-04T13:15:32.093Z", 
+        "groups": [], 
+        "user_permissions": [], 
+        "password": "!7lU9ZDmfFQttYqNSY59RJyUgeaeWfeTGPFiuZXie", 
+        "email": "annima.sola@gmail.com", 
+        "date_joined": "2014-09-04T12:46:57.831Z"
+    }
+},
+{
+    "pk": 1, 
+    "model": "sites.site", 
+    "fields": {
+        "domain": "localhost:8000", 
+        "name": "my.kiwiapp.com"
     }
 },
 {
@@ -175,6 +201,16 @@
         "title": "Bootstrap Monthly Week picker", 
         "timestamp": "2014-09-04T15:07:28Z", 
         "author": 2
+    }
+},
+{
+    "pk": 11, 
+    "model": "qa.question", 
+    "fields": {
+        "text": "asdfasdfasdfasdf", 
+        "title": "asd", 
+        "timestamp": "2014-09-04T12:47:07.947Z", 
+        "author": 4
     }
 }
 ]

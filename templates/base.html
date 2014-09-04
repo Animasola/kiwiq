@@ -24,6 +24,8 @@
     <ul class="right">
       {% if user.is_authenticated %}
         <li class="active"><a href="{% url 'auth_logout' %}">Logout</a></li>
+        <li><a href="{% url 'password_reset' %}">Reset Password</a></li> /
+        <li><a href="{% url 'password_change' %}">Change Password</a></li>
       {% else %}
         <li class="active"><a href="{% url 'auth_login' %}">Login</a></li>
         <li class="active"> <a href="{% url 'registration_register' %}">Register</a></li>

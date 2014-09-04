@@ -32,5 +32,4 @@ class SendCommentNotificationTestCase(TestCase):
         message = mail.outbox[0].message().as_string()
         self.assertTrue(self.question.author.username.capitalize() in message)
         self.assertTrue(self.question.author.email in message)
-        self.assertTrue(self.comment.user.username.capitalize() in message)
         self.assertTrue(self.comment.user.email in message)
