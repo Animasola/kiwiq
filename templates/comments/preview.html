@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load comments %}
+
+{% block title %}Comment:Preview{% endblock %}
+
+{% block body %}
+{% if form.errors|length > 0 %}
+    <h1>Please correct the errors below</h1>
+    <h5>To post an answer, your need to correct errors below</h5>
+    <span class="label alert">(>__<)</span>
+{% else %}
+    <h1>Your comment preview</h1>
+    <span class="label success">(^_^)</span>
+{% endif %}
+<div class="row panel">
+    <form action="{% comment_form_target %}" method="post">
+        {% csrf_token %}
+        {% if next %}<input type="hidden" name="next" value="{{ next }}" />{% endif %}
+        {% for field in form %}
+          {% if field.is_hiden %}
+                <p>{{ field }}</p>
+          {% else %}
+              <div
+                {% if field.name == "honeypot" or field.name == "url" %} style="display:none;"{% endif %}>
+                <label {% if field.is_hidden %}style="display:none;"{% endif %} class="label">{{ field.label }}</label>
+                <label class="error">
+                {% if not field.value %}
+                    {{ field }}
+                {% else %}
+                    {% if not field.is_hidden and not field.name == "comment" %}
+                        <input name="{{ field.name }}" type="text" readonly value="{{ field.value }}" />
+                    {% elif not field.is_hidden and field.name == "comment" %}
+                        <textarea readonly cols="40" name="comment" rows="10">{{ field.value }}</textarea>
+                    {% else %}
+                        {{ field }}
+                    {% endif %}
+                {% endif %}
+                </label>
+                {% for error in field.errors %}
+                  <small class="error">{{ error }}</small>
+                {% endfor %}
+              </div>
+
+          {% endif %}
+        {% endfor %}
+
+        <input class="submit-post button tiny success" type="submit" name="post" value="Post" />
+        <input type="submit" name="preview" class="submit-preview button tiny warning" value="Preview" />
+    </form>
+</div>
+
+{% endblock %}

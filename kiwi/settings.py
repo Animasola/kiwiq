@@ -10,6 +10,10 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+import random
+
+from django.core.urlresolvers import reverse
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
@@ -40,6 +44,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     # 3rd party
     'django_comments',
+    'social_auth',
     'registration',
     'south',
     # native apps
@@ -103,3 +108,50 @@ EMAIL_HOST_USER = 'gorazio.the.greek@gmail.com'
 EMAIL_HOST_PASSWORD = 'Btp31uQC#'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+
+# FB
+FACEBOOK_APP_ID = '707690579286596'
+FACEBOOK_API_SECRET = 'f8c432b3a78127f8db4acc82e5ac36cc'
+
+SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = reverse('home')
+FACEBOOK_EXTENDED_PERMISSIONS = ['email']
+
+AUTHENTICATION_BACKENDS = (
+    'social_auth.backends.facebook.FacebookBackend',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+    'django.core.context_processors.static',
+    'django.core.context_processors.tz',
+    'django.contrib.messages.context_processors.messages',
+    'django.core.context_processors.request',
+    'social_auth.context_processors.social_auth_by_name_backends',
+)
+
+SOCIAL_AUTH_DEFAULT_USERNAME = lambda: random.choice(
+    ['Darth_Vader', 'Obi-Wan_Kenobi', 'R2-D2', 'C-3PO', 'Yoda'])
+
+SOCIAL_AUTH_CREATE_USERS = True
+
+SOCIAL_AUTH_PIPELINE = (
+    'social_auth.backends.pipeline.social.social_auth_user',
+    'social_auth.backends.pipeline.associate.associate_by_email',
+    'social_auth.backends.pipeline.user.get_username',
+    'social_auth.backends.pipeline.user.create_user',
+    'social_auth.backends.pipeline.social.associate_user',
+    'social_auth.backends.pipeline.social.load_extra_data',
+    'social_auth.backends.pipeline.user.update_user_details',
+)
+
+SOCIAL_AUTH_PROVIDERS = [
+    {'id': p[0], 'name': p[1], 'position': {'width': p[2][0], 'height': p[2][1], }}
+    for p in (
+        ('facebook', u'Login via Facebook', (0, 0)),
+    )
+]

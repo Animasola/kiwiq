@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load social_auth_widget %}
 
 {% block head %}
   {% block title %}Login to edit information{% endblock %}
@@ -28,6 +29,7 @@
         <input class="button success" type="submit" value="login" /> or
         <a class="button alert" href="{% url 'registration_register' %}">Sign Up</a>
       </div>
+      {% social_auth_widget %}
     </form>
   </div>
 {% endblock %}

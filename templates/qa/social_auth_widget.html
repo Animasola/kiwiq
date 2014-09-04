@@ -1,0 +1,4 @@
+
+{% for provider in providers %}
+    <a class="button tiny" href="{% url 'socialauth_begin' backend=provider.id %}">{{ provider.name }}</a>
+{% endfor %}
