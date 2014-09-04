@@ -28,8 +28,8 @@
       <div class="small-8 columns small-centered">
         <input class="button success" type="submit" value="login" /> or
         <a class="button alert" href="{% url 'registration_register' %}">Sign Up</a>
+        <span class='right'>{% social_auth_widget %}</span>
       </div>
-      {% social_auth_widget %}
     </form>
   </div>
 {% endblock %}
